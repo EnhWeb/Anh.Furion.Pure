@@ -5,8 +5,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <Title>Anh.Furion.Pure 自定义版</Title>
-	  <Version>1.0.2-preview</Version>
+	  <Version>1.0.3-preview</Version>
 	  <Authors>闵文辉</Authors>
+	  <PackageIcon>avatar.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,6 +17,13 @@
 
   <ItemGroup>
     <PackageReference Include="Furion.Pure" Version="4.8.8.23" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="avatar.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
