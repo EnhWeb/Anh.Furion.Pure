@@ -5,9 +5,23 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <Title>Anh.Furion.Pure 自定义版</Title>
-	  <Version>1.0.3-preview</Version>
+	  <Description>
+		  <![CDATA[
+1.0.3-preview 修正 Http状态码 401 不重试的问题
+4.23.0810.2145-preview 更新其础包版本
+	  ]]>
+	  </Description>
+	  <Version>4.23.0810.2145-preview</Version>
 	  <Authors>闵文辉</Authors>
 	  <PackageIcon>avatar.png</PackageIcon>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>embedded</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>embedded</DebugType>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,7 +30,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Furion.Pure" Version="4.8.8.23" />
+    <PackageReference Include="Furion.Pure" Version="4.8.8.40" />
   </ItemGroup>
 
   <ItemGroup>
