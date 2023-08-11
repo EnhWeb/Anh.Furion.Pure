@@ -643,26 +643,26 @@ public sealed partial class HttpRequestPart
 					// 发送请求
 					response = await httpClient.SendAsync(req, cancellationToken);
 
-                    if(response?.StatusCode == HttpStatusCode.Unauthorized)
+                    if (response?.StatusCode == HttpStatusCode.Unauthorized)
                     {
-						// 调用 Unauthorized 拦截器
-						ResponseInterceptors.ForEach(u =>
-						{
-							u?.Invoke(httpClient, response);
-						});
-						// 配置请求拦截
-						RequestInterceptors.ForEach(u =>
-						{
-							u?.Invoke(httpClient, request);
-						});
-						throw new Exception($"AnhRemoteRequest Error {response?.StatusCode}");
-					}
+                        // 调用 Unauthorized 拦截器
+                        ResponseInterceptors.ForEach(u =>
+                        {
+                            u?.Invoke(httpClient, response);
+                        });
+                        // 配置请求拦截
+                        RequestInterceptors.ForEach(u =>
+                        {
+                            u?.Invoke(httpClient, request);
+                        });
+                        throw new Exception($"AnhRemoteRequest Error {response?.StatusCode}");
+                    }
                     else if (
                         response?.StatusCode == HttpStatusCode.InternalServerError ||
                         response?.StatusCode == HttpStatusCode.ServiceUnavailable ||
-						response?.StatusCode == HttpStatusCode.GatewayTimeout ||
-						response?.StatusCode == HttpStatusCode.RequestTimeout
-					)
+                        response?.StatusCode == HttpStatusCode.GatewayTimeout ||
+                        response?.StatusCode == HttpStatusCode.RequestTimeout
+                    )
                     {
                         throw new Exception($"AnhRemoteRequest Error {response?.StatusCode}");
                     }

@@ -18,13 +18,13 @@ using System.Net;
 namespace Microsoft.Extensions.DependencyInjection;
 
 /// <summary>
-/// 远程请求服务拓展类
+/// Anh 远程请求服务拓展类
 /// </summary>
 [SuppressSniffer]
 public static class RemoteRequestServiceCollectionExtensions
 {
     /// <summary>
-    /// 注册远程请求
+    /// Anh 注册远程请求
     /// </summary>
     /// <param name="services"></param>
     /// <param name="configure"></param>
