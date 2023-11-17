@@ -9,9 +9,10 @@
 		  <![CDATA[
 1.0.3-preview 修正 Http状态码 401 不重试的问题
 4.23.0810.2145-preview 更新其础包版本
+5.23.1117.1030-preview update to .net8.0
 	  ]]>
 	  </Description>
-	  <Version>4.23.0810.2145-preview</Version>
+	  <Version>5.23.1117.1030-preview</Version>
 	  <Authors>闵文辉</Authors>
 	  <PackageIcon>avatar.png</PackageIcon>
   </PropertyGroup>
