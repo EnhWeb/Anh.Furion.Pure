@@ -54,8 +54,8 @@ internal static class Ext
 		var foundAttribute = method.IsDefined(attributeType, inherit)
 			? method.GetCustomAttribute<TAttribute>(inherit)
 			: (
-				declaringType.IsDefined(attributeType, inherit)
-				? declaringType.GetCustomAttribute<TAttribute>(inherit)
+				declaringType?.IsDefined(attributeType, inherit) == true
+				? declaringType?.GetCustomAttribute<TAttribute>(inherit)
 				: default
 			);
 

@@ -196,7 +196,7 @@ public sealed partial class HttpRequestPart
     /// <param name="providerType"></param>
     /// <param name="jsonSerializerOptions"></param>
     /// <returns></returns>
-    public HttpRequestPart SetJsonSerialization(Type providerType, object jsonSerializerOptions = default)
+    public HttpRequestPart SetJsonSerialization(Type? providerType, object? jsonSerializerOptions = default)
     {
         if (providerType != null) JsonSerializerProvider = providerType;
         if (jsonSerializerOptions != null) JsonSerializerOptions = jsonSerializerOptions;

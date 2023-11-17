@@ -295,9 +295,9 @@ public class HttpDispatchProxy : AspectDispatchProxy, IDispatchProxy
     private static void SetJsonSerialization(MethodInfo method, IEnumerable<MethodParameterInfo> parameters, HttpRequestPart httpRequestPart)
     {
         // 判断方法是否自定义序列化选项
-        var jsonSerializerOptions = parameters.FirstOrDefault(u => u.Parameter.IsDefined(typeof(JsonSerializerOptionsAttribute), true))?.Value
+        var jsonSerializerOptions = parameters.FirstOrDefault(u => u.Parameter!.IsDefined(typeof(JsonSerializerOptionsAttribute), true))?.Value
                                                     // 获取静态方法且贴有 [JsonSerializerOptions] 特性的缺省配置
-                                                    ?? method.DeclaringType.GetMethods()
+                                                    ?? method.DeclaringType?.GetMethods()
                                                                            .FirstOrDefault(u => u.IsDefined(typeof(JsonSerializerOptionsAttribute), true))
                                                                            ?.Invoke(null, null);
 
