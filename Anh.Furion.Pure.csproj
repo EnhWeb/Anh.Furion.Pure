@@ -10,9 +10,10 @@
 1.0.3-preview 修正 Http状态码 401 不重试的问题
 4.23.0810.2145-preview 更新其础包版本
 5.23.1117.1030-preview update to .net8.0
+6.23.1128.2226-preview update package 到 4.9.1.7，取消 BaseAddress EndsWith("/") 检测。
 	  ]]>
 	  </Description>
-	  <Version>5.23.1117.1030-preview</Version>
+	  <Version>6.23.1128.2226-preview</Version>
 	  <Authors>闵文辉</Authors>
 	  <PackageIcon>avatar.png</PackageIcon>
   </PropertyGroup>
@@ -31,7 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Furion.Pure" Version="4.9.1.1" />
+    <PackageReference Include="Furion.Pure" Version="4.9.1.7" />
   </ItemGroup>
 
   <ItemGroup>

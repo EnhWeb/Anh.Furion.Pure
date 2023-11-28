@@ -563,8 +563,8 @@ public sealed partial class HttpRequestPart
 
         // 判断命名客户端是否配置了 BaseAddress，且必须以 / 结尾
         var httpClientOriginalString = httpClient.BaseAddress?.OriginalString;
-        if (!string.IsNullOrWhiteSpace(httpClientOriginalString) && !httpClientOriginalString.EndsWith("/"))
-            throw new InvalidOperationException($"The `{ClientName}` of HttpClient BaseAddress must be end with '/'.");
+        //if (!string.IsNullOrWhiteSpace(httpClientOriginalString) && !httpClientOriginalString.EndsWith("/"))
+        //    throw new InvalidOperationException($"The `{ClientName}` of HttpClient BaseAddress must be end with '/'.");
 
         // 添加默认 User-Agent
         if (!httpClient.DefaultRequestHeaders.Contains("User-Agent"))
