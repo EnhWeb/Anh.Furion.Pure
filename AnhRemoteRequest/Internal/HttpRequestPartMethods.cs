@@ -724,6 +724,7 @@ public sealed partial class HttpRequestPart
     /// </summary>
     /// <param name="request"></param>
     private void SetHttpContent(HttpRequestMessage request)
+    #region MyRegion
     {
         // GET/HEAD 请求不支持设置 Body 请求
         if (Method == HttpMethod.Get || Method == HttpMethod.Head) return;
@@ -734,7 +735,7 @@ public sealed partial class HttpRequestPart
         switch (ContentType)
         {
             case "multipart/form-data":
-
+                #region MyRegion
                 var boundary = "---------------" + DateTime.Now.Ticks.ToString("x");
                 var multipartFormDataContent = new MultipartFormDataContent(boundary);
 
@@ -786,7 +787,7 @@ public sealed partial class HttpRequestPart
                 // 设置内容类型
                 httpContent = multipartFormDataContent;
                 break;
-
+            #endregion
             case "application/octet-stream":
                 if (Files.Count > 0 && Files[0].Bytes.Length > 0)
                 {
@@ -796,7 +797,6 @@ public sealed partial class HttpRequestPart
                     httpContent.Headers.ContentType = new MediaTypeHeaderValue(ContentType);
                 }
                 break;
-
             case "application/json":
             case "text/json":
             case "application/*+json":
@@ -842,7 +842,8 @@ public sealed partial class HttpRequestPart
 
         // 设置 HttpContent
         if (httpContent != null) request.Content = httpContent;
-    }
+    } 
+    #endregion
 
     /// <summary>
     /// 转换 Body 为 字典类型
